@@ -1,25 +1,29 @@
-import React from 'react';
-import { Inter } from '@next/font/google';
-import styles from './styles/layout.module.css';
+import React from 'react'
+import { Inter as FontSans } from '@next/font/google'
 
-const inter = Inter({
-  variable: '--inter-font',
-});
+import '@/styles/globals.css'
+import { cn } from '@/lib/utils'
 
-interface IRootLayout {
-  children: React.ReactNode;
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+interface RootLayoutProps {
+  children: React.ReactNode
 }
-export default function RootLayout({ children }: IRootLayout) {
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="de" className={inter.variable}>
-      <head>
-        <title>FW NextJS 13</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
-      </head>
-      <body className={styles.base}>{children}</body>
+    <html
+      lang="de"
+      className={cn(
+        'bg-neutral-900 font-sans text-white antialiased',
+        fontSans.variable
+      )}
+    >
+      <head />
+      <body className="min-h-screen">{children}</body>
     </html>
-  );
+  )
 }

@@ -1,26 +1,21 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animated-gradient-text_foreground-1__gqHrR {
+  animation: animated-gradient-text_fade-foreground-1__efWVr 8s infinite
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@keyframes animated-gradient-text_fade-foreground-1__efWVr {
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  0%,
+  16.667%,
+  to {
+    opacity: 1
   }
-  body {
-    color: white;
-    background: black;
+
+  33.333%,
+  83.333% {
+    opacity: 0
   }
 }
